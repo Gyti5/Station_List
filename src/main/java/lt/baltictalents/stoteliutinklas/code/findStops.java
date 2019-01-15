@@ -2,37 +2,31 @@ package lt.baltictalents.stoteliutinklas.code;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import lt.baltictalents.stoteliutinklas.data.beans.Station;
-import lt.baltictalents.stoteliutinklas.data.hardcode.HardCodedDb;
 
 public class findStops {
 	private Coordinates TopLeft;
-	private Coordinates TopRight;
 	private Coordinates BottomRight;
-	private Coordinates BottomLeft;
+	private List<Station> sarasas;
 
-	public findStops(Coordinates TopLeft,Coordinates TopRight,Coordinates BottomLeft,Coordinates BottomRight) {
+	public findStops(Coordinates TopLeft,Coordinates TopRight,Coordinates BottomLeft,Coordinates BottomRight, List<Station> sarasas) {
 		this.TopLeft = TopLeft;
 		this.BottomRight = BottomRight;
-		this.BottomLeft = BottomLeft;
-		this.TopRight = TopRight;
+		this.sarasas = sarasas;
 		stotelesKvadrate();
 	}
 	
 	
 	private boolean isInside(String x, String y) {
+		x = x.replace("\"", "");
+		y = y.replace("\"", "");
 		Double xDouble = Double.parseDouble(x);
 		Double yDouble = Double.parseDouble(y);
-
 		if(TopLeft.getX() < xDouble && TopLeft.getY() > yDouble && BottomRight.getX() > xDouble && BottomRight.getY()<yDouble) {
 			System.out.println();
 
 			return true;}
 		else { 
-			System.out.println(yDouble);
-			System.out.println(BottomRight.getY());
-
 			return false;}
 		
 		
@@ -40,20 +34,19 @@ public class findStops {
 	
 	
 	public List<String> stotelesKvadrate() {
-        HardCodedDb StoteliuList = new HardCodedDb();
         List<String> FinalListt = new ArrayList<String>();
-        for(Station i : StoteliuList.getStoteles()) {
+        for(Station i : this.sarasas) {
         	if(isInside(i.getLongtitute(), i.getLatitude()) == true) {
         		FinalListt.add(i.getName());
         	}
+
         }
         
 		return FinalListt;
 	}
 	public List<Station> stotelesKvadrateNeString() {
-        HardCodedDb StoteliuList = new HardCodedDb();
         List<Station> FinalListt = new ArrayList<Station>();
-        for(Station i : StoteliuList.getStoteles()) {
+        for(Station i : sarasas) {
         	if(isInside(i.getLongtitute(), i.getLatitude()) == true) {
         		FinalListt.add(i);
         	}

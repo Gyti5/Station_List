@@ -11,7 +11,7 @@ public class insertData {
 		this.url = url;
 	}
 	public void setData(String name,String Latitude, String Longtitude,String Marsrutai) {
-    String sql = "insert into Stoteles values(?,?,?,?,?)";
+    String sql = "insert into Stoteles values(?,?,?,?)";
 
     try {
     	Connection conn = DriverManager.getConnection(url);
@@ -20,7 +20,6 @@ public class insertData {
         pstmt.setString(2, Latitude);
         pstmt.setString(3, Longtitude);
         pstmt.setString(4, Marsrutai);
-        pstmt.setString(5, "undefined");
 
         pstmt.executeUpdate();
     } catch (SQLException e) {
