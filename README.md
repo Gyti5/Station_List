@@ -6,4 +6,4 @@ Simple operations can be selected using simple GUI:
   Adding everything to DataBase file.
   Etc.
   
-To start the project add it as an existing gradle project and run the main method in "Application.java"
+To start the project import it as an existing gradle project and run the main method in "Application.java"
