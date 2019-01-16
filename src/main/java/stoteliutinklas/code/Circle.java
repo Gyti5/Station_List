@@ -15,7 +15,9 @@ public class Circle {
  	private void listas(Coordinates a, double r, List<Station> b){
 		 List<String> finalllist = new ArrayList<String>();
  		for(Station c: b) {
- 			Coordinates n = new Coordinates(c.getLatitude(), c.getLongtitute());
+ 			String newClat = c.getLatitude().replace("\"", "");
+ 			String newClon = c.getLongtitute().replace("\"", "");
+ 			Coordinates n = new Coordinates(newClat, newClon);
  		 if(checkIfStationIsInCircle(a, r, n) == true) {
  			 finalllist.add(c.getName());
  		 }
@@ -27,7 +29,6 @@ public class Circle {
 		
 		double x = a.getX();
 		double y = a.getY();
-
 		 if ((x - b.getY()) * (x - b.getY()) + (y - b.getX()) * (y - b.getX()) <= r * r) {
 
 		   return true; 
@@ -37,7 +38,7 @@ public class Circle {
 		 }
 	} 
 					
-public List<String> rez(){
-	return finallist;
-}
+	public List<String> rez(){
+		return finallist;
 	}
+}
