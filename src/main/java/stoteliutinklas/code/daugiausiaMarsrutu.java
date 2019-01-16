@@ -1,10 +1,10 @@
-package lt.baltictalents.stoteliutinklas.code;
+package stoteliutinklas.code;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import lt.baltictalents.stoteliutinklas.data.beans.Station;
+import stoteliutinklas.data.beans.Station;
 
 public class daugiausiaMarsrutu {
 	private final int n;

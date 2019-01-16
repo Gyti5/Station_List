@@ -1,12 +1,13 @@
-package lt.baltictalents.stoteliutinklas.config; 
+package stoteliutinklas.config; 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner; 
-import lt.baltictalents.stoteliutinklas.data.beans.*;
-import lt.baltictalents.stoteliutinklas.code.gui;
+import java.util.Scanner;
+
+import stoteliutinklas.code.gui;
+import stoteliutinklas.data.beans.*;
 
 
 public class Application {

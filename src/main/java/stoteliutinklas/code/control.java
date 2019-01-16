@@ -1,7 +1,8 @@
-package lt.baltictalents.stoteliutinklas.code;
+package stoteliutinklas.code;
 
 import java.util.List;
-import lt.baltictalents.stoteliutinklas.data.beans.Station;
+
+import stoteliutinklas.data.beans.Station;
 
 public class control {
 	private List<Station> sarasas;

@@ -1,4 +1,4 @@
-package lt.baltictalents.stoteliutinklas.code;
+package stoteliutinklas.code;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package lt.baltictalents.stoteliutinklas.code;
+package stoteliutinklas.code;
 
 public class Coordinates {
 private String x;

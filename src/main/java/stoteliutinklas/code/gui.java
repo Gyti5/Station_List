@@ -1,8 +1,10 @@
-package lt.baltictalents.stoteliutinklas.code;
+package stoteliutinklas.code;
 import java.util.List;
 import javax.swing.*;
+
+import stoteliutinklas.data.beans.*;
+
 import java.awt.event.*;
-import lt.baltictalents.stoteliutinklas.data.beans.*;
 
 public class gui {
 	static List<Station> b;

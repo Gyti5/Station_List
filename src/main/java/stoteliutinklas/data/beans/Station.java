@@ -1,4 +1,4 @@
-package lt.baltictalents.stoteliutinklas.data.beans;
+package stoteliutinklas.data.beans;
 
 public class Station {
 	String name;
