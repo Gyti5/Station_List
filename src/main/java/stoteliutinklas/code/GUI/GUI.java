@@ -19,53 +19,44 @@ public class GUI {
 	  frame.setSize(1000,300);
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	  
-	  JLabel label=new JLabel("Pasirinkit operacija:");
+	  JLabel label=new JLabel("Pasirinkite operacija:");
 	  JPanel panel=new JPanel();
 	  frame.add(panel);
 	  panel.add(label);
 	  
-	  JButton button1=new JButton("Stoteles Kvadrate");
-	  JButton button2=new JButton("Stoteles Kvadrate su max Marsrutu");
-	  JButton button3=new JButton("Stoteles Rutuly");
-	  JButton button7=new JButton("Marsrutu Stoteles");
-	  JButton button8=new JButton("Daugiausia Marsrutu");
-	  JButton button10=new JButton("Sukurti SQlite faila");
+	  JButton button1=new JButton("Stoteles esancios kvadrate");
+	  JButton button2=new JButton("Stotele kvadrate su daugiausia marsrutu");
+	  JButton button3=new JButton("Stoteles esancios rutulyje");
+	  JButton button4=new JButton("Marsrutu Stoteles");
+	  JButton button5=new JButton("Daugiausia Marsrutu");
+	  JButton button6=new JButton("Sukurti SQlite faila");
 
-	
 	  panel.add(button1);
 	  panel.add(button2);
 	  panel.add(button3);
-	  panel.add(button7);
-	  panel.add(button8);
-	  panel.add(button10);
+	  panel.add(button4);
+	  panel.add(button5);
+	  panel.add(button6);
 
-
-
-	
 	  button1.addActionListener(new Action1());
 	  button2.addActionListener(new Action2());
 	  button3.addActionListener(new Action3());
-	  button7.addActionListener(new Action7());
-	  button8.addActionListener(new Action8());
-	  button10.addActionListener(new Action10());
-
-
-
-
-
-	  
+	  button4.addActionListener(new Action4());
+	  button5.addActionListener(new Action5());
+	  button6.addActionListener(new Action6()); 
  }
+	
  	static class Action1 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 
-	    	String x1 = JOptionPane.showInputDialog("x1");
-			String y1 = JOptionPane.showInputDialog("y1");
-			String x2 = JOptionPane.showInputDialog("x2");
-			String y2 = JOptionPane.showInputDialog("y2");
+	    	String x1 = JOptionPane.showInputDialog("Top left side x coordinate?");
+			String y1 = JOptionPane.showInputDialog("Top left side y coordinate?");
+			String x2 = JOptionPane.showInputDialog("Bottom right side x coordinate?");
+			String y2 = JOptionPane.showInputDialog("Bottom right side y coordinate?");
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
+		    frame2.setSize(500,500);
 		    JLabel label=new JLabel(String.valueOf(main.StotelesKvadrate(x1, y1, x2, y2)));
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
@@ -76,15 +67,15 @@ public class GUI {
  	}
  	static class Action2 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
-	    	String x1 = JOptionPane.showInputDialog("x1");
-			String y1 = JOptionPane.showInputDialog("y1");
-			String x2 = JOptionPane.showInputDialog("x2");
-			String y2 = JOptionPane.showInputDialog("y2");
+	    	String x1 = JOptionPane.showInputDialog("Top left side x coordinate?");
+			String y1 = JOptionPane.showInputDialog("Top left side y coordinate?");
+			String x2 = JOptionPane.showInputDialog("Bottom right side x coordinate?");
+			String y2 = JOptionPane.showInputDialog("Bottom right side y coordinate?");
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
-		    JLabel label=new JLabel(String.valueOf(main.StoteleKvadrateSuMax(x1, y1, x2, y2)));
+		    frame2.setSize(500,500);
+		    JLabel label=new JLabel(String.valueOf("Daugiausia marsrutu turi: "+main.StoteleKvadrateSuMax(x1, y1, x2, y2)));
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
 		    panel.add(label);
@@ -94,13 +85,13 @@ public class GUI {
  	}
  	static class Action3 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
-	    	String x = JOptionPane.showInputDialog("x");
-			String y = JOptionPane.showInputDialog("y");
-			String r = JOptionPane.showInputDialog("r");
+	    	String x = JOptionPane.showInputDialog("x coordinate?");
+			String y = JOptionPane.showInputDialog("y coordinate?");
+			String r = JOptionPane.showInputDialog("radius of circle?");
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
+		    frame2.setSize(500,500);
 		    JLabel label=new JLabel(String.valueOf(main.StotelesRutuly(x, y,Integer.parseInt(r))));
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
@@ -110,17 +101,15 @@ public class GUI {
 	    }
  	}
 
- 	static class Action7 implements ActionListener{
+ 	static class Action4 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 	    	String pav = JOptionPane.showInputDialog("Stoteles Pavadinimas:");
-	    	pav = "Vaikų ligoninė";
-	    	System.out.println();
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
+		    frame2.setSize(500,500);
 		    JLabel label=new JLabel(String.valueOf(main.StotelesMarsrutai(pav)));
-		    JPanel panel=new JPanel(); // 
+		    JPanel panel=new JPanel(); 
 		    frame2.add(panel);
 		    panel.add(label);
     
@@ -128,13 +117,13 @@ public class GUI {
 	    }
  	}
  
- 	static class Action8 implements ActionListener{
+ 	static class Action5 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 	    	String pav = JOptionPane.showInputDialog("n");
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
+		    frame2.setSize(500,500);
 		    JLabel label=new JLabel(String.valueOf(main.DaugiausiaMarsrutu(b, Integer.parseInt(pav)))); 
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
@@ -144,15 +133,15 @@ public class GUI {
 	    }
  	}
 
- 	static class Action10 implements ActionListener{
+ 	static class Action6 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 	    	String pav = JOptionPane.showInputDialog("failo pavadinimas:");
 	 	    Controler main = new Controler(b);
 	 	    main.writeSQL(pav);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
-		    frame2.setSize(1000,300);
-		    JLabel label1=new JLabel("Failas Sukurtas pavadinimu: "+pav); 
+		    frame2.setSize(500,500);
+		    JLabel label1=new JLabel("Failas Sukurtas pavadinimu: "+pav + " database folderyje."); 
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
 		    main.AddDataToTable(pav);

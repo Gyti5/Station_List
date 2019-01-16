@@ -18,13 +18,11 @@ public class StationRoutes {
 	
 	public String marsrutuPaieska(String stotelesPavadinimas) {
 		String b = "";
+		String c = "";
 		for (Station a : sarasas) {
-	    	System.out.println("+");
-
-			if (stotelesPavadinimas == a.getName()) {
+			c = a.getName().replaceAll("\"", "");
+			if (stotelesPavadinimas.equals(c)) {
 				 b+= Arrays.toString(a.getRoutes());
-			    	System.out.println("-");
-
 			}
 		}
 		return b;

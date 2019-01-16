@@ -5,11 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class AddData {
-	private final String url = "jdbc:sqlite:C:\\Users\\Gytis\\";
+	private final String url = "jdbc:sqlite:";
 	String fileName;
+	String j =System.getProperty("user.dir");
 	public AddData(String fileName) {
 		this.fileName = fileName;
-	    try (Connection conn = DriverManager.getConnection(url+fileName+".db")) {
+	    try (Connection conn = DriverManager.getConnection(url+j+"\\database\\"+fileName+".db")) {
 
             
 	    }
@@ -18,7 +19,7 @@ public class AddData {
 	    }
 }
 	public void CreateStop(String name,String Latitude, String Longtitude,String Marsrutai) {
-        InsertData insert = new InsertData(url+fileName+".db");
+        InsertData insert = new InsertData(url+j+"\\database\\"+fileName+".db");
         insert.setData(name,Longtitude ,Latitude, Marsrutai);
 	}
 }

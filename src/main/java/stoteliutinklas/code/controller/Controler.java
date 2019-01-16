@@ -56,6 +56,7 @@ public class Controler {
 	}
 	public String StotelesMarsrutai(String pav) {
 		StationRoutes s = new StationRoutes(pav, this.sarasas);
+		
 		return s.marsrutuPaieska(pav);
 	}
 
