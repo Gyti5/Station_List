@@ -1,13 +1,13 @@
-package stoteliutinklas.code;
+package stoteliutinklas.code.SQL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class insertData {
+public class InsertData {
 	private String url = "";
-	public insertData(String url) {
+	public InsertData(String url) {
 		this.url = url;
 	}
 	public void setData(String name,String Latitude, String Longtitude,String Marsrutai) {

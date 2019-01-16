@@ -1,4 +1,4 @@
-package stoteliutinklas.code;
+package stoteliutinklas.code.SQL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class AddData {
 	    }
 }
 	public void CreateStop(String name,String Latitude, String Longtitude,String Marsrutai) {
-        insertData insert = new insertData(url+fileName+".db");
+        InsertData insert = new InsertData(url+fileName+".db");
         insert.setData(name,Longtitude ,Latitude, Marsrutai);
 	}
 }

@@ -5,12 +5,12 @@ import java.util.List;
 
 import stoteliutinklas.data.beans.Station;
 
-public class findStops {
+public class FindStops {
 	private Coordinates TopLeft;
 	private Coordinates BottomRight;
 	private List<Station> sarasas;
 
-	public findStops(Coordinates TopLeft,Coordinates TopRight,Coordinates BottomLeft,Coordinates BottomRight, List<Station> sarasas) {
+	public FindStops(Coordinates TopLeft,Coordinates TopRight,Coordinates BottomLeft,Coordinates BottomRight, List<Station> sarasas) {
 		this.TopLeft = TopLeft;
 		this.BottomRight = BottomRight;
 		this.sarasas = sarasas;

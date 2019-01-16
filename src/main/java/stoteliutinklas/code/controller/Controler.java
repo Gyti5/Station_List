@@ -1,13 +1,21 @@
-package stoteliutinklas.code;
+package stoteliutinklas.code.controller;
 
 import java.util.List;
 
+import stoteliutinklas.code.Coordinates;
+import stoteliutinklas.code.Circle;
+import stoteliutinklas.code.Square;
+import stoteliutinklas.code.MostRoutes;
+import stoteliutinklas.code.FindStops;
+import stoteliutinklas.code.StationRoutes;
+import stoteliutinklas.code.SQL.AddData;
+import stoteliutinklas.code.SQL.WriteSQL;
 import stoteliutinklas.data.beans.Station;
 
-public class control {
+public class Controler {
 	private List<Station> sarasas;
 	
-	public control(List<Station> a) {
+	public Controler(List<Station> a) {
 		this.sarasas = a;
 	}
 	
@@ -15,26 +23,26 @@ public class control {
 	
 	public List<String> StotelesKvadrate(String a, String b, String c, String d){
 		Square Square = new Square(a, b, c, d);
-		findStops h = new findStops(Square.getTopLeft(), Square.getTopRightt(), Square.getBottomLeft(), Square.getBottomRight(), this.sarasas);
+		FindStops h = new FindStops(Square.getTopLeft(), Square.getTopRightt(), Square.getBottomLeft(), Square.getBottomRight(), this.sarasas);
     		System.out.println(h.stotelesKvadrate());
 		return h.stotelesKvadrate();
 	}
 	public String StoteleKvadrateSuMax(String a, String b, String c, String d) {
 		Square Square = new Square(a, b, c, d);
-		findStops h = new findStops(Square.getTopLeft(), Square.getTopRightt(), Square.getBottomLeft(), Square.getBottomRight(), this.sarasas);
+		FindStops h = new FindStops(Square.getTopLeft(), Square.getTopRightt(), Square.getBottomLeft(), Square.getBottomRight(), this.sarasas);
 		return h.stotelesKvadrateMax();
 	}
 	public List<String> StotelesRutuly(String x, String y, int r){
-		Rutulys m = new Rutulys(new Coordinates(x,y), r, this.sarasas);
+		Circle m = new Circle(new Coordinates(x,y), r, this.sarasas);
 		return m.rez();
 	}
 	public String DaugiausiaMarsrutu(List<Station> b, int n) {
-    	daugiausiaMarsrutu c = new daugiausiaMarsrutu(b, n);
+    	MostRoutes c = new MostRoutes(b, n);
     	return c.get();
 	}
 	public void writeSQL(String pavadinimas) {
 		@SuppressWarnings("unused")
-		writeSQL a =new writeSQL(pavadinimas);
+		WriteSQL a =new WriteSQL(pavadinimas);
 	}
 	public void AddDataToTable(String pavadinimas) {
 		AddData a = new AddData(pavadinimas);
@@ -47,7 +55,7 @@ public class control {
 		}
 	}
 	public String StotelesMarsrutai(String pav) {
-		stotelesMarsrutai s = new stotelesMarsrutai(pav, this.sarasas);
+		StationRoutes s = new StationRoutes(pav, this.sarasas);
 		return s.marsrutuPaieska(pav);
 	}
 

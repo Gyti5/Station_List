@@ -1,16 +1,17 @@
-package stoteliutinklas.code;
+package stoteliutinklas.code.GUI;
 import java.util.List;
 import javax.swing.*;
 
+import stoteliutinklas.code.controller.Controler;
 import stoteliutinklas.data.beans.*;
 
 import java.awt.event.*;
 
-public class gui {
+public class GUI {
 	static List<Station> b;
 
 	@SuppressWarnings("static-access")
-	public gui(List<Station> b) {
+	public GUI(List<Station> b) {
 
 	  this.b = b;
 	  JFrame frame=new JFrame("Stoteles");
@@ -61,7 +62,7 @@ public class gui {
 			String y1 = JOptionPane.showInputDialog("y1");
 			String x2 = JOptionPane.showInputDialog("x2");
 			String y2 = JOptionPane.showInputDialog("y2");
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
 		    frame2.setSize(1000,300);
@@ -79,7 +80,7 @@ public class gui {
 			String y1 = JOptionPane.showInputDialog("y1");
 			String x2 = JOptionPane.showInputDialog("x2");
 			String y2 = JOptionPane.showInputDialog("y2");
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
 		    frame2.setSize(1000,300);
@@ -96,7 +97,7 @@ public class gui {
 	    	String x = JOptionPane.showInputDialog("x");
 			String y = JOptionPane.showInputDialog("y");
 			String r = JOptionPane.showInputDialog("r");
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
 		    frame2.setSize(1000,300);
@@ -114,7 +115,7 @@ public class gui {
 	    	String pav = JOptionPane.showInputDialog("Stoteles Pavadinimas:");
 	    	pav = "Vaikų ligoninė";
 	    	System.out.println();
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
 		    frame2.setSize(1000,300);
@@ -130,7 +131,7 @@ public class gui {
  	static class Action8 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 	    	String pav = JOptionPane.showInputDialog("n");
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);
 		    frame2.setSize(1000,300);
@@ -146,7 +147,7 @@ public class gui {
  	static class Action10 implements ActionListener{
 	    public void actionPerformed (ActionEvent e){
 	    	String pav = JOptionPane.showInputDialog("failo pavadinimas:");
-	 	    control main = new control(b);
+	 	    Controler main = new Controler(b);
 	 	    main.writeSQL(pav);
 		    JFrame frame2=new JFrame("Clicked");
 		    frame2.setVisible(true);

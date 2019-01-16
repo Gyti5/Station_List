@@ -6,15 +6,10 @@ import java.util.List;
 import stoteliutinklas.data.beans.Station;
 
 
-public class Rutulys {
-	private Coordinates a;
-	private double r;
-	private List<Station> b;
+public class Circle {
+
 	private List<String> finallist = null;
- public Rutulys(Coordinates a, double r, List<Station> b) {
-	 this.a = a;
-	 this.r = r;
-	 this.b = b;
+ public Circle(Coordinates a, double r, List<Station> b) {
 	 listas(a, r, b);
  }
  	private void listas(Coordinates a, double r, List<Station> b){

@@ -1,10 +1,10 @@
-package stoteliutinklas.code;
+package stoteliutinklas.code.SQL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class writeSQL {
+public class WriteSQL {
 	String j =System.getProperty("user.dir");
 
 	private final String url = "jdbc:sqlite:C:\\Users\\Gytis\\";
@@ -15,7 +15,7 @@ public class writeSQL {
             + "	Marsrutai text \n"
             + ");";
 
-	public writeSQL(String fileName) {
+	public WriteSQL(String fileName) {
 	    try (Connection conn = DriverManager.getConnection(url+fileName+".db")) {
 	        if (conn != null) {
 	            Statement stmt = conn.createStatement(); 

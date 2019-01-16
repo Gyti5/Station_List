@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import stoteliutinklas.code.gui;
+import stoteliutinklas.code.GUI.GUI;
 import stoteliutinklas.data.beans.*;
 
 
@@ -23,7 +23,7 @@ public class Application {
     		        String[] keliai = data[3].split("\\;");
     		        SarasasIsFailo.add(new Station(data[0], data[1],data[2],keliai));
     	}
-		gui Gui = new gui(SarasasIsFailo);
+		GUI Gui = new GUI(SarasasIsFailo);
     	sc.close();
 
     }

@@ -6,10 +6,10 @@ import java.util.List;
 
 import stoteliutinklas.data.beans.Station;
 
-public class daugiausiaMarsrutu {
+public class MostRoutes {
 	private final int n;
 	private List<Station> stotys;
- public daugiausiaMarsrutu(List<Station> stotys, int n) {
+ public MostRoutes(List<Station> stotys, int n) {
 	 this.n = n;
 	 this.stotys = stotys;
 	 daugiausia();
