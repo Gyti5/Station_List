@@ -29,7 +29,7 @@ public class GUI {
 	  JButton button3=new JButton("3.Stations in the circle");
 	  JButton button4=new JButton("4.Station routes");
 	  JButton button5=new JButton("5.N station(s) with most routes");
-	  JButton button6=new JButton("6.Create SQlite file");
+	  JButton button6=new JButton("6.Create SQlite file (this can take few sec.)");
 	  JButton button7=new JButton("HELP");
 
 	  
@@ -62,8 +62,20 @@ public class GUI {
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Done");
 		    frame2.setVisible(true);
-		    frame2.setSize(500,500);
-		    JLabel label=new JLabel(String.valueOf(main.StotelesKvadrate(x1, y1, x2, y2)));
+		    frame2.setSize(1000,1000);
+		    String ans = "<html><div>";
+		    int x = 0;
+		    for(String i : main.StotelesKvadrate(x1, y1, x2, y2)) {
+		    	ans += i;
+		    	x++;
+		    	if(x >= 7) { 
+		    		ans += "<br>";
+		    		x = 0;
+		    	}
+		    	
+		    }
+		    ans+="</div></html>";
+		    JLabel label=new JLabel(ans);
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
 		    panel.add(label);
@@ -97,8 +109,20 @@ public class GUI {
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Done");
 		    frame2.setVisible(true);
-		    frame2.setSize(500,500);
-		    JLabel label=new JLabel(String.valueOf(main.StotelesRutuly(x, y,Integer.parseInt(r))));
+		    frame2.setSize(1000,1000);
+		    String ans = "<html><div>";
+		    int x1 = 0;
+		    for(String i : main.StotelesRutuly(x, y,Integer.parseInt(r))) {
+		    	ans += i;
+		    	x1++;
+		    	if(x1 >= 7) { 
+		    		ans += "<br>";
+		    		x1 = 0;
+		    	}
+		    	
+		    }
+		    ans+="</div></html>";
+		    JLabel label=new JLabel(ans);
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
 		    panel.add(label);
@@ -113,8 +137,14 @@ public class GUI {
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Done");
 		    frame2.setVisible(true);
-		    frame2.setSize(500,500);
-		    JLabel label=new JLabel(String.valueOf(main.StotelesMarsrutai(pav)));
+		    frame2.setSize(800,500);
+		    
+		    String ans = "<html><div>";
+		    ans+=main.StotelesMarsrutai(pav);
+		    ans = ans.replace(".", "<br>");
+		    ans+="</div></html>";
+		    
+		    JLabel label=new JLabel(ans);
 		    JPanel panel=new JPanel(); 
 		    frame2.add(panel);
 		    panel.add(label);
@@ -129,7 +159,7 @@ public class GUI {
 	 	    Controler main = new Controler(b);
 		    JFrame frame2=new JFrame("Done");
 		    frame2.setVisible(true);
-		    frame2.setSize(500,500);
+		    frame2.setSize(800,500);
 		    JLabel label=new JLabel(String.valueOf(main.DaugiausiaMarsrutu(b, Integer.parseInt(pav)))); 
 		    JPanel panel=new JPanel();
 		    frame2.add(panel);
@@ -166,7 +196,7 @@ public class GUI {
 	        
 	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "1. Insert coordinates to select area from witch the stations will be picked."," eg: 20; 60; 60; 20"));
 	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "2. Insert coordinates to select area from witch the station will be picked."," eg: 20; 60; 60; 20"));
-	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "3. Insert coordinates and the radius of the circle from witch the stations will be picked.", " eg: "));
+	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "3. Insert coordinates and the radius of the circle from witch the stations will be picked.", " eg: 20; 50; 100"));
 	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "4. Enter station name to see the information about busses that stop there", " eg: Vaiku ligonine"));
 	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "5. Picks n amount of stations that have most busses stopping there", " eg: 3"));
 	        buff.append(String.format("<tr><td align='right'>%s</td><td>:</td><td>%s</td></tr>", "6. Creates new .db file with name of your choice with all the info about stops", "eg: Stations"));
